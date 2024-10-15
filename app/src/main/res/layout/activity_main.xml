@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:id="@+id/translationStyleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Label for translation style spinner, aligned to the left -->
+        <TextView
+            android:id="@+id/translationStyleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="翻訳スタイルを選択"
+            android:textSize="16sp"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Translation style spinner, aligned to the right -->
+        <Spinner
+            android:id="@+id/translationStyleSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:entries="@array/translation_styles" />
+    </LinearLayout>
+
+
+    <!-- Language selection layout -->
+    <LinearLayout
+        android:id="@+id/languageSelectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/translationStyleLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Source language spinner -->
+        <Spinner
+            android:id="@+id/sourceLanguageSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/source_languages" />
+
+        <!-- To label -->
+        <TextView
+            android:id="@+id/toTextLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="→"
+            android:textSize="18sp"
+            android:textAlignment="center"/>
+
+        <!-- Target language spinner -->
+        <Spinner
+            android:id="@+id/outputLanguageSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/target_languages" />
+    </LinearLayout>
+
+    <!-- Input text box -->
+    <EditText
+        android:id="@+id/inputText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Enter text to translate"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:scrollbars="vertical"
+        android:gravity="top"
+        app:layout_constraintTop_toBottomOf="@id/languageSelectionLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
+        app:layout_constraintHeight_percent="0.4" />
+
+    <!-- Output text box -->
+    <TextView
+        android:id="@+id/translatedText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="Translation result"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:scrollbars="vertical"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/inputText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/translateButton"
+        app:layout_constraintHeight_percent="0.4" />
+
+    <!-- Translate button -->
+    <Button
+        android:id="@+id/translateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="翻訳する"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

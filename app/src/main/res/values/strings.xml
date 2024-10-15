@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">TransApp</string>
+    <string-array name="source_languages">
+        <item>Japanese</item>
+        <item>English</item>
+        <item>Spanish</item>
+        <!-- Add more languages as needed -->
+    </string-array>
+
+    <string-array name="target_languages">
+        <item>Japanese</item>
+        <item>English</item>
+        <item>French</item>
+        <!-- Add more languages as needed -->
+    </string-array>
+    <string-array name="translation_styles">
+        <item>小説</item>
+        <item>日常生活</item>
+        <item>論文</item>
+        <item>とんでも意訳</item>
+    </string-array>
+</resources>
